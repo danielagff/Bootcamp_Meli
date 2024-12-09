@@ -3,6 +3,7 @@ package repository
 import (
 	"aula2gobases/docs/db"
 	"aula2gobases/internal/model"
+	"aula2gobases/internal/repository/interfaces"
 	"fmt"
 )
 
@@ -46,6 +47,10 @@ func (r *ProductRepository) DeleteById(id int) (string, error) {
 		return "", fmt.Errorf("produto com o id: %d não encontrado", id)
 	}
 	delete(r.DataBase.Products, id)
+	err := r.DataBase.Commit()
+	if err != nil {
+		return "", err
+	}
 	return "Product deleted!", nil
 }
 
@@ -54,6 +59,10 @@ func (r *ProductRepository) UpdateById(id int, product model.Product) (string, e
 		return "", fmt.Errorf("produto com o id: %d não encontrado", id)
 	}
 	r.DataBase.Products[id] = product
+	err := r.DataBase.Commit()
+	if err != nil {
+		return "", err
+	}
 	return "Product Updated!", nil
 }
 
@@ -64,6 +73,11 @@ func (r *ProductRepository) UpdatePriceById(id int, product model.Product) (mode
 	productInDB := r.DataBase.Products[id]
 	productInDB.Price = product.Price
 	r.DataBase.Products[id] = productInDB
+
+	err := r.DataBase.Commit()
+	if err != nil {
+		return model.Product{}, err
+	}
 	return r.DataBase.Products[id], nil
 }
 
@@ -76,3 +90,5 @@ func (r *ProductRepository) getMaxId() int {
 	}
 	return maxID
 }
+
+var _ interfaces.IProductsRepository = (*ProductRepository)(nil)

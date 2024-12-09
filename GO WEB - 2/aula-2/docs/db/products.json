@@ -3474,15 +3474,6 @@
     "price": 786.26
   },
   {
-    "id": 387,
-    "name": "Sugar - Cubes",
-    "quantity": 37,
-    "code_value": "S63415D",
-    "is_published": false,
-    "expiration": "24/04/2021",
-    "price": 324.76
-  },
-  {
     "id": 388,
     "name": "Puree - Strawberry",
     "quantity": 270,
@@ -4516,5 +4507,59 @@
     "is_published": true,
     "expiration": "14/11/2021",
     "price": 19.99
+  },
+  {
+    "id": 503,
+    "name": "Produto Teste",
+    "quantity": 50,
+    "code_value": "6nlUgdU",
+    "is_published": true,
+    "expiration": "14/11/2021",
+    "price": 19.99
+  },
+  {
+    "id": 504,
+    "name": "Produto Teste",
+    "quantity": 50,
+    "code_value": "kq5r3rZ",
+    "is_published": true,
+    "expiration": "14/11/2021",
+    "price": 19.99
+  },
+  {
+    "id": 505,
+    "name": "Produto Teste",
+    "quantity": 50,
+    "code_value": "1Y3LUmi",
+    "is_published": true,
+    "expiration": "14/11/2021",
+    "price": 19.99
+  },
+  {
+    "id": 506,
+    "name": "Produto Teste",
+    "quantity": 50,
+    "code_value": "DP0dbNb",
+    "is_published": true,
+    "expiration": "14/11/2021",
+    "price": 19.99
+  },
+  {
+    "id": 507,
+    "name": "Produto Teste",
+    "quantity": 50,
+    "code_value": "IbvvNwb",
+    "is_published": true,
+    "expiration": "14/11/2021",
+    "price": 19.99
+  },
+  {
+    "id": 508,
+    "name": "Oil - Margarine",
+    "quantity": 200,
+    "code_value": "EB2igMA",
+    "is_published": true,
+    "expiration": "15/12/2021",
+    "price": 1971.42
   }
 ]

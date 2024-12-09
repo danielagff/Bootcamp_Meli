@@ -28,7 +28,15 @@ func main() {
 
 	//router.Get("/products/search", GetHigherPriceProductsByPrice)
 
-	router.Post("/products", productHandler.CreateProduct)
+	router.Route("/products", func(r chi.Router) {
+		r.Post("/", productHandler.CreateProduct)
+		r.Get("/", productHandler.GetAllProducts)
+		r.Get("/{id}", productHandler.GetProductById)
+		r.Delete("/{id}", productHandler.DeleteProductById)
+		r.Put("/{id}", productHandler.UpdateProductById)
+		r.Patch("/{id}/price", productHandler.UpdatePriceById)
+		r.Get("/search", productHandler.GetHigherPriceProductsByPrice) 
+	})
 
 	if err := http.ListenAndServe(":8081", router); err != nil {
 		panic(err)
